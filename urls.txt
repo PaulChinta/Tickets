@@ -1,0 +1,6 @@
+/login
+/register
+/mytickets
+/flights
+/details
+/bookings
