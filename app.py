@@ -13,7 +13,7 @@ def login():
         ssn=request.form['ssn']
         return redirect(url_for('create',name=ssn))
     else:
-        return render_template("login.html")
+        return render_template("index.html")
 
 if(__name__=="__main__"):
     app.run(debug=True)
