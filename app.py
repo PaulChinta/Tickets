@@ -7,19 +7,18 @@ app = Flask(__name__)
 app.secret_key="hey"
 
 
-@app.route("/login",methods=['GET','POST'])
+@app.route("/register",methods=['GET','POST'])
 def login():
     if request.method=='POST':
-        
         p_num=request.form['p_name']
         first_name=request.form['first_name']
         last_name=request.form['last_name']
         gender=request.form['gender']
         dob=request.form['dob']
         email_id=request.form['email_id']
-        obj.User(p_num,first_name,last_name,gender,dob,email_id)
-
-        return redirect(url_for('create',p_num=p_num,first_name=first_name,last_name=last_name,))
+        X=obj.User(p_num,first_name,last_name,gender,dob,email_id)
+        X.print_data()
+        # return redirect(url_for('create',p_num=p_num,first_name=first_name,last_name=last_name,))
     else:
         return render_template("index.html")
 
