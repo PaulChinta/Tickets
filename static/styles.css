@@ -23,7 +23,7 @@ form {
   }
   
   button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #7399e1;
     color: white;
     padding: 10px;
     border: none;
@@ -32,6 +32,6 @@ form {
   }
   
   button[type="submit"]:hover {
-    background-color: #3e8e41;
+    background-color: #74b1da;
   }
   
