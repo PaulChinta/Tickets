@@ -10,7 +10,11 @@ app.secret_key="hey"
 @app.route("/login",methods=['GET','POST'])
 def login():
     if request.method=='POST':
-        ssn=request.form['ssn']
+        ssn=request.form['passport']
+        ssn=request.form['first_name']
+        ssn=request.form['last_name']
+        ssn=request.form['gender']
+        ssn=request.form['gender']
         return redirect(url_for('create',name=ssn))
     else:
         return render_template("index.html")
@@ -19,7 +23,12 @@ def login():
 @app.route("/register",methods=['GET','POST'])
 def login():
     if request.method=='POST':
-        ssn=request.form['ssn']
+        ssn=request.form['passport']
+        ssn=request.form['first_name']
+        ssn=request.form['last_name']
+        ssn=request.form['gender']
+        ssn=request.form['dob']
+        ssn=request.form['email_id']
         return redirect(url_for('create',name=ssn))
     else:
         return render_template("index.html")
@@ -28,10 +37,12 @@ def login():
 @app.route("/flights",methods=['GET','POST'])
 def login():
     if request.method=='POST':
+        
         ssn=request.form['ssn']
         return redirect(url_for('create',name=ssn))
     else:
-        return render_template("flights.html")
+        x=flights()
+        return redirect(url_for('create',flights=x))
         
 @app.route("/details",methods=['GET','POST'])
 def login():
