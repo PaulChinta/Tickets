@@ -9,3 +9,6 @@ class User:
     def print_data(self):
         print(self.p_num,self.first_name,self.last_name,self.gender,self.dob,self.email_id)
 
+class Flight:
+    def __init__(self,f_no,origin,destination,number_seats):
+        pass
