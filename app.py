@@ -10,7 +10,7 @@ app.secret_key="hey"
 @app.route("/register",methods=['GET','POST'])
 def login():
     if request.method=='POST':
-        p_num=request.form['p_name']
+        p_num=request.form['p_num']
         first_name=request.form['first_name']
         last_name=request.form['last_name']
         gender=request.form['gender']
@@ -18,24 +18,13 @@ def login():
         email_id=request.form['email_id']
         X=obj.User(p_num,first_name,last_name,gender,dob,email_id)
         X.print_data()
-        # return redirect(url_for('create',p_num=p_num,first_name=first_name,last_name=last_name,))
+        # add data to database
+        return render_template("test.html",p_num=p_num,first_name=first_name,last_name=last_name,gender=gender,dob=dob,email_id=email_id)
     else:
         return render_template("index.html")
 
 
-# @app.route("/register",methods=['GET','POST'])
-# def login():
-#     if request.method=='POST':
-#         ssn=request.form['passport']
-#         ssn=request.form['first_name']
-#         ssn=request.form['last_name']
-#         ssn=request.form['gender']
-#         ssn=request.form['dob']
-#         ssn=request.form['email_id']
-#         return redirect(url_for('create',name=ssn))
-#     else:
-#         return render_template("index.html")
-        
+ 
 
 # @app.route("/flights",methods=['GET','POST'])
 # def login():
