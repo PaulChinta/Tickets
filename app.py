@@ -26,14 +26,14 @@ def login():
 
  
 
-# @app.route("/flights",methods=['GET','POST'])
-# def login():
-#     if request.method=='POST':
-#         ssn=request.form['ssn']
-#         return redirect(url_for('create',name=ssn))
-#     else:
-#         # x=flights()
-#         return redirect(url_for('create'))
+@app.route("/flights",methods=['GET','POST'])
+def flights():
+    if request.method=='POST':
+        ssn=request.form['ssn']
+        return redirect(url_for('create',name=ssn))
+    else:
+        # x=flights()
+        return render_template('flights.html')
         
 # @app.route("/details",methods=['GET','POST'])
 # def login1():
